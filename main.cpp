@@ -5,10 +5,11 @@
 #define SCREEN_HEIGHT 800
 #define FPS 60
 
-Color Green = Color{38, 185, 154, 255};
-Color Dark_Green = Color{20, 160, 133, 255};
-Color Light_Green = Color{129, 204, 184, 255};
-Color Yellow = Color{243, 213, 91, 255};
+Color Green = {38, 185, 154, 255};
+Color Dark_Green = {20, 160, 133, 255};
+Color Light_Green = {129, 204, 184, 255};
+Color Yellow = {243, 213, 91, 255};
+Color White = {255, 255, 255, 255};
 
 int player_score = 0;
 int cpu_score = 0;
@@ -69,7 +70,7 @@ class Paddle {
     int speed_y;
 
     void Draw () {
-        DrawRectangleRounded(Rectangle{x, y, width, height}, 0.8, 0, WHITE);
+        DrawRectangleRounded(Rectangle{x, y, width, height}, 0.8, 0, White);
     }
 
     void Update () {
@@ -146,12 +147,12 @@ int main () {
         ClearBackground(Dark_Green);
         DrawRectangle(SCREEN_WIDHT/2, 0, SCREEN_WIDHT/2, SCREEN_HEIGHT, Green);
         DrawCircle(SCREEN_WIDHT/2, SCREEN_HEIGHT/2, 150, Light_Green);
-        DrawLine(SCREEN_WIDHT/2, 0, SCREEN_WIDHT/2, SCREEN_HEIGHT, WHITE);
+        DrawLine(SCREEN_WIDHT/2, 0, SCREEN_WIDHT/2, SCREEN_HEIGHT, White);
         ball.Draw();
         cpu.Draw();
         player.Draw();
-        DrawText(TextFormat("%i", cpu_score), SCREEN_WIDHT/4 - 20, 20, 80, WHITE);
-        DrawText(TextFormat("%i", player_score), 3*SCREEN_WIDHT/4 - 20, 20, 80, WHITE);
+        DrawText(TextFormat("%i", cpu_score), SCREEN_WIDHT/4 - 20, 20, 80, White);
+        DrawText(TextFormat("%i", player_score), 3*SCREEN_WIDHT/4 - 20, 20, 80, White);
         EndDrawing();
     }
 
